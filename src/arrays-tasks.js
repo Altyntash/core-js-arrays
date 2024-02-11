@@ -72,7 +72,7 @@ function findElement(arr, value) {
  *    findAllOccurrences([ true, 0, 1, 'true' ], true) => 1
  */
 function findAllOccurrences(arr, item) {
-  arr.filter((element) => element === item).length;
+  return arr.filter((element) => element === item).length;
 }
 
 /**
@@ -356,7 +356,7 @@ function generateOdds(/* len */) {
  *   getElementByIndices([[[ 1, 2, 3]]], [ 0, 0, 1 ]) => 2        (arr[0][0][1])
  */
 function getElementByIndices(arr, indices) {
-  return arr.filter((element) => !element === true).length;
+  return indices.reduce((acc, element) => acc[element], arr);
 }
 
 /**
@@ -507,7 +507,7 @@ function propagateItemsByPositionIndex(/* arr */) {
  *    shiftArray([10, 20, 30, 40, 50], -3) => [40, 50, 10, 20, 30]
  */
 function shiftArray(arr, n) {
-  const result = return arr.slice(-n).concat(arr.slice(0, -n));
+  const result = arr.slice(-n).concat(arr.slice(0, -n));
   return result;
 }
 
